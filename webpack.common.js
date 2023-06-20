@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -9,6 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      icon: "./src/icons/weather-icon.png",
       template: "./src/index.html",
       title: "Weather App",
     }),
@@ -16,6 +18,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+    new FaviconsWebpackPlugin("./src/icons/weather-icon.png"),
   ],
   output: {
     filename: "[name].bundle.js",

@@ -4,9 +4,184 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/weather-icon.png">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-    
+    <div id="search">
+        <input type="text", placeholder="Search Location...">
+    </div>
+    <div id="summary">
+        <div id="location">Kaduna, Kaduna State</div>
+        <div id="weather">
+            <div id="img">
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="">
+            </div>
+            <div id="value">23°</div>
+            <div id="units">
+                <div id="celsius" class="active">C</div>
+                <div class="farenheit">F</div>
+            </div>
+        </div>
+        <div id="weather-description">Partly sunny</div>
+        <div id="last-updated">Last updated 07:34 AM</div>
+        <div id="weather-details">
+            <div class="details">Feels like 24°</div>
+            <div class="details">Wind 10 km/h</div>
+            <div class="details">Visibility 10km</div>
+            <div class="details">Barometer 1015.00 mb</div>
+            <div class="details">Humidity 95%</div>
+            <div class="details">Dew Point 23°</div>
+        </div>
+    </div>
+    <div id="daily-forecast">
+        <div id="daily">
+            <h2>Daily</h2>
+        </div>
+        <div id="daily-grid">
+            <div class="daily-card">
+                <h3 class="day">Tue 20</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Wed 21</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Thu 22</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Fri 23</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Sat 24</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Sun 25</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="daily-card">
+                <h3 class="day">Mon 26</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+        </div>
+    </div>
+    <div id="hourly-forecast">
+        <div id="hourly">
+            <h2>Hourly</h2>
+        </div>
+        <div id="hourly-grid">
+            <div class="hourly-card">
+                <h3 class="time">8:00 AM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">9:00 AM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">10:00 AM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">11:00 AM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">12:00 PM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">1:00 PM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">2:00 PM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+            <div class="hourly-card">
+                <h3 class="time">3:00 PM</h3>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
+                <div class="temp">
+                    <h3 class="high">30°</h3>
+                    <h3 class="low">23°</h3>
+                </div>
+                <p class="desc">Mostly cloudy</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
