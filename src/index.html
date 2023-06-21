@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/weather-icon.png">
+    <link rel="icon" type="image/svg" sizes="32x32" href="./src/icons/weather-icon.svg">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
     <div id="search">
-        <input type="text", placeholder="Search Location...">
+        <input id="input" type="text", placeholder="Search Location...">
+        <img src="<%=require('./icons/search-icon.svg')%>" alt="" id="search-icon">
     </div>
     <div id="summary">
-        <div id="location">Kaduna, Kaduna State</div>
+        <div id="location"></div>
         <div id="weather">
             <div id="img">
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="">
+                <img src="" alt="">
             </div>
-            <div id="value">23°</div>
+            <div id="value"></div>
             <div id="units">
                 <div id="celsius" class="active">C</div>
-                <div class="farenheit">F</div>
+                <div id="farenheit">F</div>
             </div>
         </div>
-        <div id="weather-description">Partly sunny</div>
-        <div id="last-updated">Last updated 07:34 AM</div>
+        <div id="weather-description"></div>
+        <div id="last-updated"></div>
         <div id="weather-details">
-            <div class="details">Feels like 24°</div>
-            <div class="details">Wind 10 km/h</div>
-            <div class="details">Visibility 10km</div>
-            <div class="details">Barometer 1015.00 mb</div>
-            <div class="details">Humidity 95%</div>
-            <div class="details">Dew Point 23°</div>
+            <div id="feels-like" class="details"></div>
+            <div id="wind" class="details"></div>
+            <div id="wind-direction" class="details"></div>
+            <div id="visibility" class="details"></div>
+            <div id="barometer" class="details"></div>
+            <div id="humidity" class="details"></div>
         </div>
     </div>
     <div id="daily-forecast">
@@ -39,7 +40,7 @@
             <h2>Daily</h2>
         </div>
         <div id="daily-grid">
-            <div class="daily-card">
+            <!-- <div class="daily-card">
                 <h3 class="day">Tue 20</h3>
                 <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="img">
                 <div class="temp">
@@ -101,7 +102,7 @@
                     <h3 class="low">23°</h3>
                 </div>
                 <p class="desc">Mostly cloudy</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <div id="hourly-forecast">
