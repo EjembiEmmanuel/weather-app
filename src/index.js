@@ -12,6 +12,10 @@ const API_KEY = "6f8bd4e81e984328bd5121300232106";
 
 // Select elements
 var loader = document.querySelector(".loader");
+var search = document.querySelector("#search");
+var summary = document.querySelector("#summary");
+var daily = document.querySelector("#daily-forecast");
+var hourly = document.querySelector("#hourly-forecast");
 var location = document.querySelector("#location");
 var weatherImg = document.querySelector("#img").firstElementChild;
 var temp = document.querySelector("#value");
@@ -31,24 +35,38 @@ var hourlyGrid = document.querySelector("#hourly-grid");
 
 // Get and display weather info
 async function displayWeatherInfo(city, unit, initialLoad = false) {
+  // Show loader when execution starts
   loader.style.display = "block";
   loader.classList.add("spin");
 
+  // Initialize default city when the page loads for the fist time
   if (initialLoad) {
     city = "Kaduna";
   }
 
+  // Build url for api call
   var url = buildWeatherUrl(API_KEY, city);
 
   try {
+    // Get weather data
     let weatherData = await getWeatherData(url);
 
+    // Throw errors if there are any
     if (weatherData.error) {
       let err = weatherData.error.message;
       throw new Error(err);
     }
 
+    // Show elements
+    search.style.display = "block";
+    summary.style.display = "flex";
+    daily.style.display = "flex";
+    hourly.style.display = "flex";
+
+    // Render weather data on respective elements
     renderData(weatherData, unit);
+
+    // Hide loader when execution has completed
     loader.style.display = "none";
   } catch (err) {
     loader.style.display = "none";
