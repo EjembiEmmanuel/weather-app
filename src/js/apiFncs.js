@@ -1,6 +1,6 @@
 // Build weather url
 function buildWeatherUrl(api_key, location) {
-  return `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${location}&days=8&aqi=no&alerts=no`;
+  return `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${location}&days=10&aqi=no&alerts=no`;
 }
 
 // Get weather data

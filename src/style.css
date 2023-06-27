@@ -3,6 +3,16 @@
     src: url("./fonts/Roboto/Roboto-Light.ttf");
 }
 
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 body {
     background: url("./img/background.jpg");
     background-size: cover;
@@ -13,6 +23,23 @@ body {
     flex-direction: column;
     font-family: "Roboto";
     color: white;
+}
+
+.spin {
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.loader {
+    display: none;
+    position: absolute;
+    inset: 0;
+    margin: auto; 
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
 }
 
 #search {
@@ -106,8 +133,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 #daily-forecast #daily,
@@ -118,33 +145,41 @@ body {
 #daily-forecast #daily h2,
 #hourly-forecast #hourly h2 {
     font-size: 18px;
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 #daily-forecast #daily-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
+    display: flex;
     width: 100%;
+    overflow-y: auto;
 }
 
-#daily-forecast #daily-grid .daily-card,
+#daily-forecast #daily-grid::-webkit-scrollbar {
+    display: none;
+}
+
+#daily-forecast #daily-grid .forecast-card,
 #hourly-forecast #hourly-grid .hourly-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    min-width: 150px;
 }
 
-#daily-forecast #daily-grid .daily-card h3,
-#hourly-forecast #hourly-grid .hourly-card h3 {
+#daily-forecast #daily-grid .forecast-card h3,
+#hourly-forecast #hourly-grid .hourly-card .time {
     font-size: 14px;
     margin: 0px;
 }
 
-#daily-forecast #daily-grid .daily-card img,
+#daily-forecast #daily-grid .forecast-card img,
 #hourly-forecast #hourly-grid .hourly-card img {
     margin: 0px;
 }
 
-#daily-forecast #daily-grid .daily-card .temp,
+#daily-forecast #daily-grid .forecast-card .temp,
 #hourly-forecast #hourly-grid .hourly-card .temp {
     display: flex;
     flex-direction: row;
@@ -153,26 +188,33 @@ body {
     margin: 0px;
 }
 
-#daily-forecast #daily-grid .daily-card .temp .high,
-#hourly-forecast #hourly-grid .hourly-card .temp .high {
+#daily-forecast #daily-grid .forecast-card .temp .high,
+#hourly-forecast #hourly-grid .hourly-card .temp {
     font-size: 20px;
     margin-right: 10px;
 }
 
-#daily-forecast #daily-grid .daily-card .temp .low,
-#hourly-forecast #hourly-grid .hourly-card .temp .low {
+#daily-forecast #daily-grid .forecast-card .temp .low {
     font-size: 12px;
 }
 
-#daily-forecast #daily-grid .daily-card .desc,
+#daily-forecast #daily-grid .forecast-card .desc,
 #hourly-forecast #hourly-grid .hourly-card .desc {
     font-size: 14px;
     margin-top: 5px;
 }
 
 #hourly-forecast #hourly-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+#hourly-forecast #hourly-grid .hourly-card {
+    min-width: 150px;
+}
+
+#hourly-forecast #hourly-grid::-webkit-scrollbar {
+    display: none;
 }
 
