@@ -18,18 +18,6 @@
     animation: spin 2s linear infinite;
 }
 
-.loader {
-    display: none;
-    position: absolute;
-    inset: 0;
-    margin: auto; 
-    width: 100px;
-    height: 100px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid orange;
-    border-radius: 50%;
-}
-
 #search input {
     background: transparent;
     min-width: 150px;
@@ -50,6 +38,7 @@
 
 #search #search-icon {
     margin: 0px;
+    cursor: pointer;
 }
 
 #summary {
@@ -84,8 +73,7 @@
 
 #daily-forecast #daily-grid {
     display: flex;
-    min-width: 100%;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 
 #daily-forecast #daily-grid::-webkit-scrollbar {
@@ -104,17 +92,16 @@
 #hourly-forecast #hourly-grid {
     display: flex;
     flex-direction: row;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 
 #hourly-forecast #hourly-grid::-webkit-scrollbar {
     display: none;
 }
 
-
-@media (min-width: 320px) and (max-width: 500px) {
+@media (min-width: 280px) and (max-width: 500px) and (orientation: portrait) {
     body {
-        background: url("./img/background.jpg");
+        background: url("./img/portrait.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -123,6 +110,18 @@
         flex-direction: column;
         font-family: "Roboto";
         color: white;
+    }
+
+    .loader {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 50px;
+        height: 50px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid orange;
+        border-radius: 50%;
     }
 
     #search {
@@ -220,17 +219,29 @@
     }
 }
 
-@media (min-width: 500px) and (max-width: 1000px) {
+@media (min-width: 500px) and (max-width: 1000px) and (orientation: portrait) {
     body {
-        background: url("./img/background.jpg");
+        position: relative;
+        background: url("./img/portrait.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         font-family: "Roboto";
         color: white;
+    }
+
+    .loader {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 70px;
+        height: 70px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid orange;
+        border-radius: 50%;
     }
 
     #search {
@@ -277,7 +288,6 @@
     #hourly-forecast {
         display: none;
         flex-direction: column;
-        margin-top: 30px;
         margin-bottom: 10px;
         margin-left: 5px;
         margin-right: 5px;
@@ -334,18 +344,28 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         font-family: "Roboto";
         color: white;
     }
 
+    .loader {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto; 
+        width: 70px;
+        height: 70px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid orange;
+        border-radius: 50%;
+    }
+
     #search {
         display: none;
         align-self: flex-end;
         margin-top: 10px;
-        margin-bottom: 30px;
         border-bottom: 2px solid white;
     }
 
@@ -385,7 +405,6 @@
     #hourly-forecast {
         display: none;
         flex-direction: column;
-        margin-top: 30px;
         margin-bottom: 10px;
         margin-left: 5px;
         margin-right: 5px;
@@ -432,6 +451,244 @@
     #daily-forecast #daily-grid .forecast-card .desc,
     #hourly-forecast #hourly-grid .hourly-card .desc {
         font-size: 14px;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1000px) and (orientation: landscape) {
+    body {
+        background: url("./img/portrait.jpg");
+        background-size:  cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        font-family: "Roboto";
+        color: white;
+    }
+
+    .loader {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 70px;
+        height: 70px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid orange;
+        border-radius: 50%;
+    }
+
+    #search {
+        display: none;
+        align-self: flex-end;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid white;
+    }
+
+    #summary #location {
+        font-size: 14px;
+    }
+
+    #summary #weather #value {
+        font-size: 32px;
+    }
+
+    #summary #weather #units {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #summary #weather-description {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    #summary #last-updated {
+        font-size: 10px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    #summary #weather-details .details {
+        font-size: 10px;
+        margin-right: 25px;
+    }
+
+    #daily-forecast,
+    #hourly-forecast {
+        display: none;
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #daily-forecast #daily h2,
+    #hourly-forecast #hourly h2 {
+        font-size: 10px;
+        padding: 5px 10px;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card,
+    #hourly-forecast #hourly-grid .hourly-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 100px;    
+    }
+
+    #daily-forecast #daily-grid .forecast-card h3,
+    #hourly-forecast #hourly-grid .hourly-card .time {
+        font-size: 10px;
+        margin: 0px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card img,
+    #hourly-forecast #hourly-grid .hourly-card img {
+        width: 30px;
+        margin: 0px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .temp .high,
+    #hourly-forecast #hourly-grid .hourly-card .temp {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .temp .low {
+        font-size: 10px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .desc,
+    #hourly-forecast #hourly-grid .hourly-card .desc {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1400px) and (orientation: landscape) {
+    body {
+        position: relative;
+        background: url("./img/portrait.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        font-family: "Roboto";
+        color: white;
+    }
+
+    .loader {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 70px;
+        height: 70px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid orange;
+        border-radius: 50%;
+    }
+
+    #search {
+        display: none;
+        align-self: flex-end;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid white;
+    }
+
+    #summary #location {
+        font-size: 16px;
+    }
+
+    #summary #weather #value {
+        font-size: 48px;
+    }
+
+    #summary #weather #units {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    #summary #weather-description {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    #summary #last-updated {
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    #summary #weather-details .details {
+        font-size: 12px;
+        margin-right: 25px;
+    }
+
+    #daily-forecast,
+    #hourly-forecast {
+        display: none;
+        flex-direction: column;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #daily-forecast #daily h2,
+    #hourly-forecast #hourly h2 {
+        font-size: 14px;
+        padding: 5px 10px;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card,
+    #hourly-forecast #hourly-grid .hourly-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 120px;    
+    }
+
+    #daily-forecast #daily-grid .forecast-card h3,
+    #hourly-forecast #hourly-grid .hourly-card .time {
+        font-size: 12px;
+        margin: 0px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card img,
+    #hourly-forecast #hourly-grid .hourly-card img {
+        width: 50px;
+        margin: 0px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .temp .high,
+    #hourly-forecast #hourly-grid .hourly-card .temp {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .temp .low {
+        font-size: 12px;
+    }
+
+    #daily-forecast #daily-grid .forecast-card .desc,
+    #hourly-forecast #hourly-grid .hourly-card .desc {
+        font-size: 12px;
         margin-top: 5px;
     }
 }
